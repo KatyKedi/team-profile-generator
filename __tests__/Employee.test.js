@@ -8,7 +8,7 @@ test('creates a new employee object', () => {
     expect(employee.email).toEqual(expect.any(String));
 });
 
-test('gets the employee info', () => {
+test('gets all the employee info', () => {
     const employee = new Employee("Theron", 20, "email");
 
     expect(employee.getName()).toEqual('Theron');

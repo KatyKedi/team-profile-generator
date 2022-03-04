@@ -9,6 +9,12 @@ test('create an engineer object from the employee object', () => {
     expect(engineer.github).toEqual(expect.any(String));
 });
 
+test('get the github account for the engineer', () => {
+    const engineer = new Engineer("Theron", 20, "email", "github");
+
+    expect(engineer.getGithub()).toEqual(expect.any(String));
+});
+
 test('get the role for the engineer', () => {
     const engineer = new Engineer("Theron", 20, "email", "github");
 
