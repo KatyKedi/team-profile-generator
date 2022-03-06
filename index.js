@@ -1,7 +1,15 @@
 const inquirer = require('inquirer');
+const fs = require('fs');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
+const generateHTML = require('./src/generateHTML');
+
+const htmlData = {
+    manager: '',
+    engineers: [],
+    interns: []
+};
 
 var employeePrompt = function(employee) {
     return inquirer
@@ -76,6 +84,7 @@ var managerPrompt = function(manager) {
         }
     ]).then(officeNumber => {
         manager.officeNumber = officeNumber.officeNumber;
+        htmlData.manager = manager;
         addPrompt();
     });
 }
@@ -92,7 +101,8 @@ var addPrompt = function() {
             if (confirm.addEmployee) {
                 typePrompt();
             } else {
-                return;
+                const html = generateHTML(htmlData);
+                writeToFile(html);
             }
         })
 };
@@ -134,6 +144,7 @@ var engineerPrompt = function(engineer) {
             }
         ]).then(data => {
             engineer.github = data.name;
+            htmlData.engineers.push(engineer);
             addPrompt();
         });
 };
@@ -155,8 +166,18 @@ var internPrompt = function(intern) {
             }
         ]).then(data => {
             intern.school = data.school;
+            htmlData.interns.push(intern);
             addPrompt();
         });
+};
+
+// Create a function to write README file
+function writeToFile(html) {
+    fs.writeFile('./dist/teamProfile.html', html, err => {
+        if (err) throw new Error(err);
+
+        console.log('Page created! Check out teamProfile.html in the dist to see it!');
+    });
 };
 
 var init = function() {
