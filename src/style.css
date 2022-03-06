@@ -1,0 +1,23 @@
+header {
+    text-align: center;
+    font-size: 72px;
+    background-color: red;
+    color: white;
+}
+
+.cbody {
+    padding: 50px 200px;
+    justify-content: center;
+}
+
+.card {
+    margin: 20px 20px 20px 20px;
+    min-width: 250px;
+    background-color: lightgray;
+}
+
+.card-top {
+    padding: 10px 10px 10px 10px;
+    background-color: blue;
+    color: white;
+}
