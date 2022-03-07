@@ -13,7 +13,7 @@ This application allows the user to create a team profile by entering data for t
   - Intern: includes a school name
 
 ## Application preview
-[![video snapshot](https://github.com/KatyKedi/team-profile-generator/blob/main/assets/team-profile-generator.png?raw=true)](https://github.com/KatyKedi/team-profile-generator/main/assets/team-profile-generator.webm "Walkthrough video")
+[![video snapshot](https://github.com/KatyKedi/team-profile-generator/blob/main/assets/team-profile-generator.png?raw=true)](https://github.com/KatyKedi/team-profile-generator/blob/main/assets/team-profile-generator.webm "Walkthrough video")
 
 ## Deployed application link
 https://katykedi.github.io/team-profile-generator/
